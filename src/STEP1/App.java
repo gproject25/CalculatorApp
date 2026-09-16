@@ -4,6 +4,31 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
+    public void calculate(int num1, int num2, char op){
+        int result = 0;
+        switch(op){
+            case '+':
+                result = num1+num2;
+                break;
+            case '-':
+                result = num1-num2;
+                break;
+            case '*':
+                result = num1*num2;
+                break;
+            case '/':
+                if(num2 == 0) {
+                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                    return;
+                }
+                else
+                    result = num1/num2;
+                break;
+            default:
+                System.out.println("올바른 구호가 아닙니다.");
+        }
+        System.out.println("결과: " + result);
+    }
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
@@ -36,7 +61,7 @@ public class App {
                 System.out.print("사칙연산 기호를 다시 입력하세요 (+,-,*,/) : ");
                 arithmetic = keyboard.next().charAt(0);
             }
-            //calculate(num1,num2,arithmetic); 계산 기능 추가
+            app.calculate(num1,num2,arithmetic);
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             exitCalc = keyboard.next();
