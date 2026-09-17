@@ -48,10 +48,24 @@ public class Calculator {
     }
 
     public void viewResults(){
+        if(results.isEmpty()){
+            System.out.println("기록이 없습니다.");
+            return;
+        }
+
         System.out.println("------ 계산 기록 ------");
         for(int i=0; i<results.size(); i++)
-            System.out.println("("+(i+1)+"). " + results.get(i));
+            System.out.println("("+(i+1)+") " + results.get(i));
     }
 
+    public void removeResult() {
+        if(results.isEmpty()){
+            System.out.println("삭제할 기록이 없습니다.");
+            return;
+        }
 
+        System.out.println("데이터를 삭제했습니다! : " + results.get(0));
+        results.remove(0);
+        viewResults();
+    }
 }

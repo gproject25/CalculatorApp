@@ -77,8 +77,7 @@ public class App {
                     calculator.viewResults();
                     break;
                 case 3: //기록 삭제
-                    //calculator.removeResult();
-                    //calculator.viewResults();
+                    calculator.removeResult();
                     break;
                 case 4: //exit
                     return;
