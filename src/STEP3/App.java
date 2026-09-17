@@ -20,17 +20,18 @@ public class App {
             System.out.println("1. 계산하기");
             System.out.println("2. 기록보기");
             System.out.println("3. 기록삭제");
-            System.out.println("4. Exit");
+            System.out.println("4. 기준값 보다 큰 결과 출력");
+            System.out.println("5. Exit");
             System.out.println("------- ------------ -------\n");
 
             try {
                 input = keyboard.nextInt();
-                while(input != 1 && input != 2 && input != 3 && input != 4){
-                    System.out.print("다시 입력하세요! (1,2,3,4):");
+                while(input != 1 && input != 2 && input != 3 && input != 4 && input!=5){
+                    System.out.print("다시 입력하세요! (1,2,3,4,5):");
                     input = keyboard.nextInt();
                 }
             } catch(InputMismatchException e){
-                System.out.println("정수를 입력하세요! (1,2,3,4)");
+                System.out.println("정수를 입력하세요! (1,2,3,4,5)");
                 keyboard.nextLine();
                 continue;
             }
@@ -78,7 +79,21 @@ public class App {
                 case 3: //기록 삭제
                     calculator.removeResult();
                     break;
-                case 4: //exit
+                case 4: //도전 기능
+                    double value = 0;
+                    while(true){
+                        try {
+                            System.out.print("기준값을 입력하세요: ");
+                            value = keyboard.nextDouble();
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("다시 입력하세요!");
+                            keyboard.nextLine();
+                        }
+                    }
+                    calculator.printGreater(value);
+                    break;
+                case 5://exit
                     return;
             }
         }

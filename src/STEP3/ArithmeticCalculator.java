@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class ArithmeticCalculator<T extends Number>  {
     private ArrayList<String> results = new ArrayList<>(); // 계산 기록 저장을 위한 배열
+    private ArrayList<Double> resultValues = new ArrayList<>(); //결과만 저장
 
     public void calculate(T num1, T num2, char op){
         double result = 0;
@@ -25,16 +26,19 @@ public class ArithmeticCalculator<T extends Number>  {
                 result = n1+n2;
                 System.out.println("결과: " +num1 + " + " + num2 + " = " + result);
                 results.add(num1 + " + " + num2 + " = " + result);
+                resultValues.add(result);
                 break;
             case SUBTRACT:
                 result = n1-n2;
                 System.out.println("결과: " +num1 + " - " + num2 + " = " + result);
                 results.add(num1 + " - " + num2 + " = " + result);
+                resultValues.add(result);
                 break;
             case MULTIPLY:
                 result = n1*n2;
                 System.out.println("결과: " + num1 + " * " + num2 + " = " + result);
                 results.add(num1 + " * " + num2 + " = " + result);
+                resultValues.add(result);
                 break;
             case DIVIDE:
                 if(n2 == 0) { //0으로 나눈 예외 처리
@@ -45,6 +49,7 @@ public class ArithmeticCalculator<T extends Number>  {
                     result = n1 / n2;
                     System.out.println("결과: " + num1 + " / " + num2 + " = " + result);
                     results.add(num1 + " / " + num2 + " = " + result);
+                    resultValues.add(result);
                 }
                 break;
             default:
@@ -79,7 +84,12 @@ public class ArithmeticCalculator<T extends Number>  {
 
         System.out.println("데이터를 삭제했습니다! : " + results.get(0));
         results.remove(0);
+        resultValues.remove(0);
         viewResults();
+    }
+
+    public void printGreater(double value) {
+        resultValues.stream().filter(result -> result > value).forEach(result -> System.out.println(result));
     }
 }
 
