@@ -38,4 +38,12 @@ public class Calculator {
                 System.out.println("올바른 구호가 아닙니다.");
         }
     }
+
+    public ArrayList<String> getResults() {
+        return results;
+    }
+
+    public void setResults(String result) {
+        results.add(result);
+    }
 }
