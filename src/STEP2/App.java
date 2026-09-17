@@ -74,7 +74,7 @@ public class App {
                     calculator.calculate(num1,num2,arithmetic);
                     break;
                 case 2: //기록보기
-                    //calculator.viewResults();
+                    calculator.viewResults();
                     break;
                 case 3: //기록 삭제
                     //calculator.removeResult();

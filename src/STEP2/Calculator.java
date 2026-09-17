@@ -24,7 +24,7 @@ public class Calculator {
                 results.add(num1 + " * " + num2 + " = " + result);
                 break;
             case '/':
-                if(num2 == 0) {
+                if(num2 == 0) { //0으로 나눈 예외 처리
                     System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     return;
                 }
@@ -46,4 +46,12 @@ public class Calculator {
     public void setResults(String result) {
         results.add(result);
     }
+
+    public void viewResults(){
+        System.out.println("------ 계산 기록 ------");
+        for(int i=0; i<results.size(); i++)
+            System.out.println("("+(i+1)+"). " + results.get(i));
+    }
+
+
 }
