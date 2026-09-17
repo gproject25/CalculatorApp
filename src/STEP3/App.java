@@ -1,24 +1,22 @@
 package STEP3;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        List<String> resultView = new ArrayList<>();
         ArithmeticCalculator calculator = new ArithmeticCalculator();
+        //ArithmeticCalculator<Integer> calculatorInteger = new ArithmeticCalculator<>();
 
-        int num1,num2,input,input2;
+        int input;
+        double num1,num2;
         char arithmetic;
-        String addRecord;
 
         while(true) {
 
-            System.out.println("\n------- LEVEL2 계산기 -------");
+            System.out.println("\n------- LEVEL3 계산기 -------");
             System.out.println("1. 계산하기");
             System.out.println("2. 기록보기");
             System.out.println("3. 기록삭제");
@@ -43,7 +41,7 @@ public class App {
                     while(true){
                         try {
                             System.out.print("첫 번째 숫자를 입력하세요: ");
-                            num1 = keyboard.nextInt();
+                            num1 = keyboard.nextDouble();
                             if (num1 < 0)
                                 throw new InputMismatchException("num1 error");
                             break;
@@ -55,7 +53,7 @@ public class App {
                     while(true){
                         try {
                             System.out.print("두 번째 숫자를 입력하세요: ");
-                            num2 = keyboard.nextInt();
+                            num2 = keyboard.nextDouble();
                             if (num2 < 0)
                                 throw new InputMismatchException("num2 error");
                             break;

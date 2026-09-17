@@ -2,11 +2,13 @@ package STEP3;
 
 import java.util.ArrayList;
 
-public class ArithmeticCalculator {
+public class ArithmeticCalculator<T extends Number>  {
     private ArrayList<String> results = new ArrayList<>(); // 계산 기록 저장을 위한 배열
 
-    public void calculate(int num1, int num2, char op){
-        int result = 0;
+    public void calculate(T num1, T num2, char op){
+        double result = 0;
+        double n1 = num1.doubleValue();
+        double n2 = num2.doubleValue();
 
         OperatorType operator;
         if(op == '+')
@@ -20,27 +22,27 @@ public class ArithmeticCalculator {
 
         switch(operator){
             case ADD:
-                result = num1+num2;
+                result = n1+n2;
                 System.out.println("결과: " +num1 + " + " + num2 + " = " + result);
                 results.add(num1 + " + " + num2 + " = " + result);
                 break;
             case SUBTRACT:
-                result = num1-num2;
+                result = n1-n2;
                 System.out.println("결과: " +num1 + " - " + num2 + " = " + result);
                 results.add(num1 + " - " + num2 + " = " + result);
                 break;
             case MULTIPLY:
-                result = num1*num2;
+                result = n1*n2;
                 System.out.println("결과: " + num1 + " * " + num2 + " = " + result);
                 results.add(num1 + " * " + num2 + " = " + result);
                 break;
             case DIVIDE:
-                if(num2 == 0) { //0으로 나눈 예외 처리
+                if(n2 == 0) { //0으로 나눈 예외 처리
                     System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     return;
                 }
                 else {
-                    result = num1 / num2;
+                    result = n1 / n2;
                     System.out.println("결과: " + num1 + " / " + num2 + " = " + result);
                     results.add(num1 + " / " + num2 + " = " + result);
                 }
