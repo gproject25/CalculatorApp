@@ -13,17 +13,17 @@ Java를 활용하여 단계별로 계산기 프로그램을 구현했습니다.
 - 예외 처리 (InputException)
 
 STEP1 - 클래스를 사용하지 않고 Java의 기본 문법을 활용하여 계산기를 구현
-- [STEP 1](.src/STEP1)
+- [STEP 1](src/STEP1)
   
 ![img.png](img.png)
 
 STEP2 - 클래스를 활용한 계산기 구현
-- [STEP 2](.src/STEP2)
+- [STEP 2](src/STEP2)
   
 ![img_1.png](img_1.png)
 
 STEP3 - 도전 기능을 추가적으로 적용하여 계산기를 확장
-- [STEP 3](.src/STEP3)
+- [STEP 3](src/STEP3)
   
  ![img_2.png](img_2.png)
 
