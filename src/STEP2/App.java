@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class App {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         List<String> resultView = new ArrayList<>();
         Calculator calculator = new Calculator();
@@ -71,7 +71,7 @@ public class App {
                         System.out.print("사칙연산 기호를 다시 입력하세요 (+,-,*,/) : ");
                         arithmetic = keyboard.next().charAt(0);
                     }
-                    //calculator.calculate(num1,num2,arithmetic);
+                    calculator.calculate(num1,num2,arithmetic);
                     break;
                 case 2: //기록보기
                     //calculator.viewResults();
