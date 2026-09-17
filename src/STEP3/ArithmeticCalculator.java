@@ -7,23 +7,34 @@ public class ArithmeticCalculator {
 
     public void calculate(int num1, int num2, char op){
         int result = 0;
-        switch(op){
-            case '+':
+
+        OperatorType operator;
+        if(op == '+')
+            operator = OperatorType.ADD;
+        else if(op == '-')
+            operator = OperatorType.SUBTRACT;
+        else if(op == '*')
+            operator = OperatorType.MULTIPLY;
+        else
+            operator = OperatorType.DIVIDE;
+
+        switch(operator){
+            case ADD:
                 result = num1+num2;
                 System.out.println("결과: " +num1 + " + " + num2 + " = " + result);
                 results.add(num1 + " + " + num2 + " = " + result);
                 break;
-            case '-':
+            case SUBTRACT:
                 result = num1-num2;
                 System.out.println("결과: " +num1 + " - " + num2 + " = " + result);
                 results.add(num1 + " - " + num2 + " = " + result);
                 break;
-            case '*':
+            case MULTIPLY:
                 result = num1*num2;
                 System.out.println("결과: " + num1 + " * " + num2 + " = " + result);
                 results.add(num1 + " * " + num2 + " = " + result);
                 break;
-            case '/':
+            case DIVIDE:
                 if(num2 == 0) { //0으로 나눈 예외 처리
                     System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                     return;
